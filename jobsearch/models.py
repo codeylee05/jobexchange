@@ -24,7 +24,7 @@ class Job(models.Model):
     job_created_at = models.DateField(auto_now=True)
     job_description = models.TextField(null=True)
 
-    def is_valid_job(self):
+    def is_valid_job(self): #
 
         return self.job_name and self.job_level and self.job_hirer and self.job_location and self.job_description != "" and self.job_salary > 0 and self.job_level in valid_job_levels
 
