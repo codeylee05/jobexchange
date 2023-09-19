@@ -1,0 +1,53 @@
+{% extends 'jobsearch/base.html' %}
+{% load static %}
+
+
+<title>{% block title %} Register - Jobsearch {% endblock %}</title>
+
+    {% block content %}
+
+    <div class="title-head">Register a job</div>
+    <div class="validator">{{ message }}</div>
+    <form action="{% url 'process_register' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="reg-hirer" id="reg-hirer-label">Job Hirer</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="reg-hirer" placeholder="Enter the job hirer" name="hirer" required>
+        </div>
+        <div>
+            <label for="reg-name" id="reg-name-label">Job Name</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="reg-name" placeholder="Enter the job name" name="name" required>
+        </div>
+        <div>
+            <label for="reg-level" id="reg-level-label">Job Level</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="reg-level" placeholder="Enter the job level (entry/junior/senior)" name="level" required>
+        </div>
+        <div>
+            <label for="reg-location" id="reg-location-label">Job Location</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="reg-location" placeholder="Enter the job location" name="location" required>
+        </div>
+        <div>
+            <label for="reg-salary" id="reg-salary-label">Job Salary</label>
+        </div>
+        <div>
+            <input class="search-bar" type="number" id="reg-salary" placeholder="Enter the job salary" name="salary" required>
+        </div>
+        <div>
+            <label for="reg-description" id="reg-description-label">Job Description</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="reg-description" placeholder="Enter the job description" name="description" required>
+        </div>
+
+        <button type="submit" class="submit-button">Register</button>
+        <button class="clear-button" type="reset">Clear</button>
+
+    {% endblock %}

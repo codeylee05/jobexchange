@@ -1,0 +1,23 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Jobsearch {% endblock %}</title>
+    <!--<link rel="stylesheet" href="{% static 'jobsearch/bootstrap.min.css' %}"> Need to account for change to styles-->
+    <link rel="stylesheet" href="{% static 'jobsearch/styles.css' %}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-links">
+            <div><a href="{% url 'index' %}">Home</a></div>
+            <div><a href="{% url 'explore' %}">Explore</a></div>
+            <div><a href="{% url 'register' %}">Register</a></div>
+            <div><a href="{% url 'search' %}">Search</a></div>
+            <div><a href="{% url 'user' %}">Account</a></div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

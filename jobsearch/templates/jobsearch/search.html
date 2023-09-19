@@ -1,0 +1,35 @@
+{% extends 'jobsearch/base.html' %}
+{% load static %}
+
+    <title>{% block title %} Search - Jobsearch {% endblock %}</title>
+
+    {% block content %}
+
+    <div class="title-head">Find a job</div>
+    <div class="validator">{{ message }}</div>
+    <form action="{% url 'process_search' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="search-name" id="search-name-label">Job Name</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="search-name" placeholder="Enter the job name" name="name" required>
+        </div>
+        <div>
+            <label for="search-level" id="search-level-label">Job Level</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="search-level" placeholder="Enter the job level (entry/junior/senior)" name="level" required>
+        </div>
+        <div>
+            <label for="search-location" id="search-location-label">Job Location</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="search-location" placeholder="Enter the job location" name="location" required>
+        </div>
+
+        <button type="submit" class="submit-button">Search</button>
+        <button class="clear-button" type="reset">Clear</button>
+    </form>
+
+    {% endblock %}

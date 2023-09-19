@@ -1,0 +1,19 @@
+{% extends 'jobsearch/base.html' %}
+{% load static %}
+
+    <title>{% block title %} Home - Jobsearch {% endblock %}</title>
+
+    {% block content %}
+
+    <div class="title-head">
+        Welcome to Jobsearch!
+    </div>
+    <div class="title-prompt">
+        What would you like to do?
+    </div>
+    <div class="controls">
+            <a href="{% url 'register' %}"><button class="submit-button">Register a job</button></a>
+            <a href="{% url 'search' %}"><button class="submit-button">Search for a job</button></a>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,21 @@
+{% extends "jobsearch/base.html" %}
+{% load static %}
+
+    <title>Account - Jobsearch</title>
+
+    {% block content %}
+
+    <div class="title-head">Your Jobsearch Account</div>
+    <div class="user-details-container">
+        <div>User Details</div>
+        <div>{{ request.user.username }}</div>
+        <div>{{ request.user.email }}</div>
+    </div>
+    <div>
+        <h2><a href="{% url 'applied_jobs' %}">Applications</a></h2>
+    </div>
+    <div>
+        <button>Logout</button>
+    </div>
+
+    {% endblock %}

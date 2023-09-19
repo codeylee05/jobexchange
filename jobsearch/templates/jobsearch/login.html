@@ -1,0 +1,30 @@
+{% extends 'jobsearch/base.html' %}
+{% load static %}
+
+    <title>{% block title %}Log in - Jobsearch{% endblock %}</title>
+
+    {% block content %}
+
+    <div class="title-head">Log into your Jobexchange account</div>
+    <div class="validator">{{ message }}</div>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="login-name" id="login-name-label">Username</label>
+        </div>
+        <div>
+            <input class="search-bar" type="text" id="login-name" placeholder="Enter your username" name="username" required>
+        </div>
+        <div>
+            <label for="login-pass" id="login-pass-label">Password</label>
+        </div>
+        <div>
+            <input class="search-bar" type="password" id="login-pass" placeholder="Enter your password" name="password" required>
+        </div>
+        <div>
+            <button type="submit">Login</button>
+        </div>
+        <div>
+    </form>
+
+    {% endblock %}

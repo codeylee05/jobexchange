@@ -1,0 +1,49 @@
+{% extends 'jobsearch/base.html' %}
+{% load static %}
+
+    <title>{% block title %} Apply job ({{ job.id }}) - Jobsearch {% endblock %}</title>
+
+    {% block content %}
+
+    <div>
+        <div class="title-head">
+            Apply for job
+        </div>
+        <div>
+            Apply for job <strong>{{ job.job_name }}</strong> by hirer <strong>{{ job.job_hirer }}</strong>
+        </div>
+    </div>
+    <div>
+        <form class="application-form" action="{% url 'process_apply' job_id=job.id %}" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="apply-name" id="apply-name-label">Name</label>
+            </div>
+            <div>
+                <input class="search-bar" type="text" id="apply-name" placeholder="Enter your name" name="name" required>
+            </div>
+            <div>
+                <label for="apply-surname" id="apply-surname-label">Surname</label>
+            </div>
+            <div>
+                <input class="search-bar" type="text" id="apply-surname" placeholder="Enter your surname" name="surname" required>
+            </div>
+            <div>
+                <label for="apply-email" id="apply-email-label">Email</label>
+            </div>
+            <div>
+                <input class="search-bar" type="email" id="apply-email" placeholder="Enter your email adress" name="email" required>
+            </div>
+            <div>
+                <label for="apply-resume" id="apply-resume-label">Resumé</label>
+            </div>
+            <div>
+                <input class="search-bar" type="file" id="apply-resume" placeholder="Upload your resumé" name="resume" required>
+            </div>
+            
+            <button type="submit" class="submit-button">Apply</button>
+            <button class="clear-button" type="reset">Clear</button>
+        </form>
+    </div>
+
+    {% endblock %}
