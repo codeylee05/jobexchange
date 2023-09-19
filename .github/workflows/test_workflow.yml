@@ -8,14 +8,12 @@ on:
 jobs:
     test_job:
         runs-on: ubuntu-latest
-        defaults:
-            run: 
-                working-directory: ./jobsearch/tests/
+    
         steps:
             - uses: actions/checkout@v4
             - name: Install dependencies
               run: |
-                pip install --user django
+                pip install -r requirements.txt
                 
             - name: Run App Tests
               run: |
