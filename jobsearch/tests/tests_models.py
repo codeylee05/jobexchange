@@ -12,7 +12,7 @@ class TestModels(TestCase):
             job_level="JUNIOR", 
             job_hirer="hirer1", 
             job_location="location1", 
-            job_salary=0, 
+            job_salary=1000, 
             job_description="description1"
         )
         self.application1 = Application.objects.create(
