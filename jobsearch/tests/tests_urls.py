@@ -5,6 +5,7 @@ from jobsearch.views import index, register, search, applied_jobs, process_regis
 
 # Started with tests nice
 # btw use "autopep8" formatter, it's pretty good
+# learn the 3 A's in testing (Arrange, Act, Assert)
 
 
 class TestUrls(SimpleTestCase):
