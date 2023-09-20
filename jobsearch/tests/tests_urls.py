@@ -3,12 +3,16 @@ from django.urls import reverse, resolve
 
 from jobsearch.views import index, register, search, applied_jobs, process_register, process_search, apply, process_apply, delete_application
 
+# Started with tests nice
+# btw use "autopep8" formatter, it's pretty good
+
+
 class TestUrls(SimpleTestCase):
 
     def test_index_url_resolves(self):
-        
+
         url = reverse("index")
-        
+
         self.assertEqual(resolve(url).func, index)
 
     def test_register_url_resolves(self):
@@ -43,7 +47,8 @@ class TestUrls(SimpleTestCase):
 
     def test_apply_url_resolves(self):
 
-        url = reverse("apply", args=["1"]) #the argument '1' is some default arg of an integer as is the required data type
+        # the argument '1' is some default arg of an integer as is the required data type
+        url = reverse("apply", args=["1"])
 
         self.assertEqual(resolve(url).func, apply)
 
