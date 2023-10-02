@@ -1,34 +1,38 @@
 {% extends 'jobsearch/base.html' %}
 {% load static %}
 
-    <title>{% block title %} Explore Jobs - Jobsearch{% endblock %}</title>
+<title>{% block title %} Explore Jobs - Jobsearch{% endblock %}</title>
 
-    {% block content %}
-    <div class="jobs-main-container">
-        <div class=title-head>View all available jobs</div>
+{% block content %}
+<div class="explore-jobs-main-container">
+    <div class=title-head>View all available jobs</div>
 
-        {% if jobs %}
-        {% for job in jobs %}
-        <div class="job-container">
+    {% if jobs %}
+    {% for job in jobs %}
+    <div class="job-container">
+        <div class="job-header">
             <div class="hirer-logo"><!--hirer logo goes here-->
             </div>
-            <div class="job-hirer">
-                {{ job.job_hirer }}
-            </div>
-            <div class="job-title">
-                {{ job.job_name }}
-            </div>
-            <div class="job-level">
-                {{ job.get_job_level_display }}  
-            </div>
-            <div class="job-location">
-                {{ job.job_location }}
-            </div>
-            <div class="job-further-details">
-                <div class="job-description">
-                    {{ job.job_description }}               
+            <div class="job-header-text">
+                <div class="job-hirer">
+                    {{ job.job_hirer }}
                 </div>
-                <!--<div class="job-skills">
+                <div class="job-title">
+                    {{ job.job_name }}
+                </div>
+            </div>
+        </div>
+        <div class="job-level">
+            {{ job.get_job_level_display }} LEVEL
+        </div>
+        <div class="job-location">
+            {{ job.job_location }}
+        </div>
+        <div class="job-further-details">
+            <div class="job-description">
+                {{ job.job_description }}
+            </div>
+            <!--<div class="job-skills">
                     <ul>
                         <li>HTML CSS JS</li>
                         <li>Vuelte Js Framework</li>
@@ -38,19 +42,19 @@
                         <li>Vercelize Hosting and Management</li>
                     </ul>
                 </div>-->
-                <div class="job-salary">
-                    Compensation starting at ${{ job.job_salary }}
-                </div>
-                <div class="job-controls">
-                    <button disabled="True">Contact Hirer</button>
-                    <a href="{% url 'apply' job.id %}"><button>Apply Job</button></a>
-                </div>
-                </div>
+            <div class="job-salary">
+                Compensation starting at ${{ job.job_salary }}
             </div>
         </div>
-        {% endfor %}
-        {% else %}
-        <h2>No matching jobs</h2>
-        {% endif %} 
-    </div> 
-    {% endblock %}
+        <div class="job-controls">
+            <button class="control-button button-1" disabled="True">Contact Hirer</button>
+            <a href="{% url 'apply' job.id %}"><button class="control-button button-2">Apply Job</button></a>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+</div>
+<h2>No matching jobs</h2>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+$theme-primary: blue;
+$theme-secondary: lightblue;
+$theme-gradient: linear-gradient(to bottom, $theme-primary 35%, $theme-secondary 70%, transparent);
+$font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$theme-gradient-2: linear-gradient(to right, $theme-primary, $theme-secondary);
+$theme-gradient-3: linear-gradient(to left, $theme-primary, $theme-secondary);

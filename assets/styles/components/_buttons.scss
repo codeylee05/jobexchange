@@ -1,0 +1,37 @@
+@use "./variables"as *;
+
+.controls {
+    .control-button {
+        width: 200px;
+        height: 45px;
+        border-radius: 40px;
+        border: 1px solid $theme-primary;
+        font-size: 20px;
+        color: $theme-primary;
+
+        &:hover {
+            border: none;
+            color: white;
+            transition: ease 1s;
+            cursor: pointer;
+        }
+    }
+
+    .button-1 {
+        margin-right: 15px;
+
+        &:hover {
+            background: $theme-gradient-2;
+        }
+    }
+
+    .button-2 {
+        &:hover {
+            background: $theme-gradient-3;
+        }
+    }
+}
+
+.job-controls {
+    background: gray;
+}
