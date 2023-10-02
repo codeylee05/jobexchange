@@ -1,35 +1,36 @@
 {% extends 'jobsearch/base.html' %}
 {% load static %}
 
-    <title>{% block title %} User - Jobsearch {% endblock %}</title>
+<title>{% block title %} User - Jobsearch {% endblock %}</title>
 
-    {% block content %}
+{% block content %}
 
-    <div class="title-head">Your applications</div>
-    <div class="applications-main-container">
-        {% if applications %}
-        {% for application in applications %}
-        <div class="application-container">
-            <div>
-                {{ application.target_job.job_name }}
-            </div>
-            <div>
-                {{ application.target_job.job_hirer }}
-            </div>
-            <div>
-                {{ application.target_job.job_level }}
-            </div>
-            <div>
-                {{ application.target_job.job_location }}
-            </div>
-            <div class="application-controls">
-                <a href="{% url 'delete_application' application_id=application.id %}"><button>Delete application</button></a>
-            </div>
+<div class="title-head">Your applications</div>
+<div class="applications-main-container">
+    {% if applications %}
+    {% for application in applications %}
+    <div class="job-container">
+        <div>
+            {{ application.target_job.job_name }}
         </div>
-        {% endfor %}
-        {% else %}
-        <h2>You have not applied to any job yet</h2>
-        {% endif %}
+        <div>
+            {{ application.target_job.job_hirer }}
+        </div>
+        <div>
+            {{ application.target_job.job_level }}
+        </div>
+        <div>
+            {{ application.target_job.job_location }}
+        </div>
+        <div class="application-controls">
+            <a href="{% url 'delete_application' application_id=application.id %}"><button>Delete
+                    application</button></a>
+        </div>
     </div>
+    {% endfor %}
+    {% else %}
+    <h2>You have not applied to any job yet</h2>
+    {% endif %}
+</div>
 
-    {% endblock %}
+{% endblock %}
