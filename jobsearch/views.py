@@ -52,6 +52,7 @@ def register(request):
 
     return render(request, "jobsearch/register.html")
 
+
 '''Issue in following function: A job is being saved even though the .save is not called due to invalidity'''
 def process_register(request):
 
@@ -145,8 +146,7 @@ def user_login(request):
 
             login(request, user)
 
-            return HttpResponseRedirect(reverse("index"))
-        
+            return HttpResponseRedirect(reverse("user"))
         else:
 
             return render(request, "jobsearch/login.html", {
@@ -156,6 +156,13 @@ def user_login(request):
     else:
 
        return render(request, "jobsearch/login.html")
+
+@login_required
+def user_logout(request):
+
+    logout(request)
+
+    return HttpResponseRedirect(reverse("index"))
 
 
 def explore_jobs(request):
