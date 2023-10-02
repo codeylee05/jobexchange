@@ -1,0 +1,27 @@
+.sub-head
+{
+    .sh-1
+    {
+        animation: displayOn 1s 1 forwards 1s;
+    }
+
+    .sh-2
+    {
+        animation: displayOn 1s 1 forwards 2s;
+    }
+
+    .sh-3
+    {
+        animation: displayOn 1s 1 forwards 3s;
+    }
+}
+
+@keyframes displayOn
+{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

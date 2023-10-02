@@ -1,0 +1,8 @@
+@use "./variables"as *;
+@use "./mixins"as *;
+@use "./animations"as *;
+@use "./additions/components/buttons"as *;
+@use "./additions/components/nav"as *;
+@use "./additions/components/job"as *;
+
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
