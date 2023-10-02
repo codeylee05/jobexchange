@@ -1,0 +1,36 @@
+@use "../mixins"as *;
+@use "../variables"as *;
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $theme-primary;
+    @include flex-row-layout;
+    width: 100%;
+    height: 53px;
+
+    .nav-title {
+        margin-left: 15px;
+        font-size: 1.7rem;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .nav-links {
+        @include flex-row-layout-space-around;
+        width: 40%;
+
+        div {
+            font-size: 1.3rem;
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}

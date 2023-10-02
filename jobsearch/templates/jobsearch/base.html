@@ -1,16 +1,19 @@
 {% load static %}
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} Jobsearch {% endblock %}</title>
-    <!--<link rel="stylesheet" href="{% static 'jobsearch/bootstrap.min.css' %}"> Need to account for change to styles-->
+    <link rel="stylesheet" href="{% static 'jobsearch/styles/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'jobsearch/styles/bundle.css' %}">
     <script defer src="{% static 'jobsearch/scripts/bundle.js' %}"></script>
 </head>
+
 <body>
     <nav class="nav">
+        <div class="nav-title"><a href="{% url 'index' %}">Jobexchange</a></div>
         <div class="nav-links">
             <div><a href="{% url 'index' %}">Home</a></div>
             <div><a href="{% url 'explore' %}">Explore</a></div>
@@ -21,4 +24,5 @@
     {% block content %}
     {% endblock %}
 </body>
+
 </html>

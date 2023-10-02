@@ -5,15 +5,24 @@
 
     {% block content %}
 
-    <div class="title-head">
-        Welcome to Jobsearch!
+<body class="body-index">
+    
+    <div class="main-display">
+        <div class="title-head">jobexchange</div>
+        <div class="sub-head">
+            <div class="sh-1">Hire.</div>
+            <div class="sh-2">Search.</div>
+            <div class="sh-3">Apply.</div>
+        </div>
+        <div class="closing-head">
+            with the world's largest online job hub!
+        </div>
+        <div class="controls">
+            <a href="{% url 'register' %}"><button class="control-button button-1">Register a job</button></a>
+            <a href="{% url 'search' %}"><button class="control-button button-1">Search for a job</button></a>
+        </div>
     </div>
-    <div class="title-prompt">
-        What would you like to do?
-    </div>
-    <div class="controls">
-            <a href="{% url 'register' %}"><button class="submit-button">Register a job</button></a>
-            <a href="{% url 'search' %}"><button class="submit-button">Search for a job</button></a>
-    </div>
+
+</body>
 
     {% endblock %}

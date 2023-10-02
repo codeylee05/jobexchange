@@ -1,0 +1,29 @@
+
+@mixin flex-column-layout
+{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+@mixin flex-row-layout
+{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+}
+
+@mixin flex-row-layout-space-around
+{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+
+@mixin no-text-decoration
+{
+   text-decoration: none;
+   color: black;
+}
